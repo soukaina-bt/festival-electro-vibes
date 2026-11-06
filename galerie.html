@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galerie photo du festival Electro Vibes">
+  <title>Galerie | Electro Vibes</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #151d33;
+      --text: #f5f7ff;
+      --muted: #aab4cc;
+      --accent: #a78bfa;
+      --accent-2: #22d3ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .logo {
+      color: var(--text);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+    nav a:hover, nav a[aria-current="page"] { color: var(--accent-2); }
+
+    main { width: min(1120px, 88%); margin: 0 auto; }
+
+    .intro {
+      text-align: center;
+      padding: 76px 0 42px;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 14px 0;
+      font-size: clamp(2.3rem, 6vw, 4.5rem);
+    }
+
+    .intro p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      padding-bottom: 72px;
+    }
+
+    .photo {
+      position: relative;
+      min-height: 230px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--surface);
+      isolation: isolate;
+    }
+
+    .photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 230px;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .photo:hover img { transform: scale(1.06); }
+
+    .photo figcaption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 38px 18px 17px;
+      color: white;
+      font-weight: 700;
+      background: linear-gradient(transparent, rgba(0,0,0,.78));
+    }
+
+    footer {
+      padding: 25px 7%;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .gallery { grid-template-columns: 1fr; }
+      .photo, .photo img { min-height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">ELECTRO VIBES</a>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="programme.html">Programme</a>
+      <a href="artistes.html">Artistes</a>
+      <a href="galerie.html" aria-current="page">Galerie</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <span class="eyebrow">Nos meilleurs moments</span>
+      <h1>Galerie du festival</h1>
+      <p>Revivez l'énergie d'Electro Vibes à travers une sélection de scènes, de lumières et de moments partagés.</p>
+    </section>
+
+    <section class="gallery" aria-label="Photos du festival">
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=900&q=80" alt="Public devant une scène de concert">
+        <figcaption>Une scène inoubliable</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80" alt="Concert avec jeux de lumières">
+        <figcaption>Jeux de lumières</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80" alt="Festival de musique en plein air">
+        <figcaption>Le public en fête</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80" alt="Foule réunie lors d'un festival">
+        <figcaption>Une ambiance unique</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=900&q=80" alt="DJ sur scène pendant un concert">
+        <figcaption>Au rythme des DJs</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=900&q=80" alt="Spectacle musical avec éclairages colorés">
+        <figcaption>Des souvenirs lumineux</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Electro Vibes — Tous droits réservés.
+  </footer>
+</body>
+</html>
